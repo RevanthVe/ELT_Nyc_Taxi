@@ -32,3 +32,17 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+*.json
+!spec/*.json
+
+# Git LFS
+*.psd
+*.zip
+
+# Ignore database files
+*.csv
+*.parquet
+
+# Ignore specific directory
+ny_taxi_postgres_data/
