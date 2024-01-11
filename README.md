@@ -166,5 +166,39 @@ Now you can configure gcp cli in the vm using the same process we followed to se
 
 To stop the vm from terminal -> $sudo shutdown now
 
+# Setting up Airflow to shcedule tasks
+Create a new sub-directory called airflow in the project directory.
+
+Inside airflow, create dags,logs and plugins folders using the following commands.
+$mkdir -p ./dags ./logs ./plugins
+$echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+.env is created and used to store airflow user id, if it is not automatically create a .env file and enter AIRFLOW_UID=50000 in the file.
+
+We are running the airflow service in docker setup, to create a docker setup for airflow latest version, use:
+$curl -LfO 'https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml'
+
+A docker-compose yaml file is created with all the ariflow services(you can always remove unused services from the yaml file for better performance)
+
+Insided the docker-compose file, in x-airflow-common:
+Remove the image tag, to replace it with your build from your Dockerfile, as shown
+Mount your google_credentials in volumes section as read-only
+Set environment variables: GCP_PROJECT_ID, GCP_GCS_BUCKET, GOOGLE_APPLICATION_CREDENTIALS & AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT, as per your config.
+Change AIRFLOW__CORE__LOAD_EXAMPLES to false (optional)
+
+Docker Build:
+Create a Dockerfile pointing to Airflow version you've just downloaded, such as apache/airflow:2.2.3, as the base image,
+
+And customize this Dockerfile by:
+
+Adding your custom packages to be installed. The one we'll need the most is gcloud to connect with the GCS bucket/Data Lake.
+Also, integrating requirements.txt to install libraries via pip install
+
+
+
+
+
+
+
 
 

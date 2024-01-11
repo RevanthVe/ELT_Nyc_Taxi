@@ -1,4 +1,4 @@
-# First-time build can take upto 10 mins.
+# First time build can take upto 10 min.
 
 FROM apache/airflow:2.8.0
 
