@@ -1,0 +1,35 @@
+[2024-01-08T20:37:42.569+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Local_Data_Ingestion.ingest scheduled__2023-02-02T07:00:00+00:00 [queued]>
+[2024-01-08T20:37:42.583+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Local_Data_Ingestion.ingest scheduled__2023-02-02T07:00:00+00:00 [queued]>
+[2024-01-08T20:37:42.584+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 2
+[2024-01-08T20:37:42.602+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): ingest> on 2023-02-02 07:00:00+00:00
+[2024-01-08T20:37:42.612+0000] {standard_task_runner.py:60} INFO - Started process 1649 to run task
+[2024-01-08T20:37:42.617+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Local_Data_Ingestion', 'ingest', 'scheduled__2023-02-02T07:00:00+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmpjeq67mrq']
+[2024-01-08T20:37:42.622+0000] {standard_task_runner.py:88} INFO - Job 93: Subtask ingest
+[2024-01-08T20:37:42.693+0000] {task_command.py:423} INFO - Running <TaskInstance: Local_Data_Ingestion.ingest scheduled__2023-02-02T07:00:00+00:00 [running]> on host 7374efdae9b6
+[2024-01-08T20:37:43.075+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-08T20:37:43.131+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Local_Data_Ingestion' AIRFLOW_CTX_TASK_ID='ingest' AIRFLOW_CTX_EXECUTION_DATE='2023-02-02T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-02-02T07:00:00+00:00'
+[2024-01-08T20:37:43.133+0000] {logging_mixin.py:188} INFO - yellow_tripdata_2023_02 /opt/***/input_2023-02.parquet
+[2024-01-08T20:38:35.843+0000] {logging_mixin.py:188} INFO - converted data type from parquet to csv
+[2024-01-08T20:38:35.884+0000] {logging_mixin.py:188} INFO - connection established successfully with database,insering data..
+[2024-01-08T20:39:02.260+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 26.376 seconds
+[2024-01-08T20:39:25.635+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.374 seconds
+[2024-01-08T20:39:50.504+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.868 seconds
+[2024-01-08T20:40:15.479+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.974 seconds
+[2024-01-08T20:40:38.940+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.461 seconds
+[2024-01-08T20:41:03.157+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.215 seconds
+[2024-01-08T20:41:28.550+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 25.392 seconds
+[2024-01-08T20:41:52.358+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.808 seconds
+[2024-01-08T20:42:16.307+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.948 seconds
+[2024-01-08T20:42:40.462+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.155 seconds
+[2024-01-08T20:43:04.599+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.136 seconds
+[2024-01-08T20:43:28.175+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.576 seconds
+[2024-01-08T20:43:51.845+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 23.669 seconds
+[2024-01-08T20:44:16.576+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 24.731 seconds
+[2024-01-08T20:44:28.669+0000] {logging_mixin.py:188} INFO - Inserted another chunk, it took 12.091 seconds
+[2024-01-08T20:44:28.670+0000] {logging_mixin.py:188} INFO - Reached end of the iterator.
+[2024-01-08T20:44:28.694+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-08T20:44:28.709+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Local_Data_Ingestion, task_id=ingest, execution_date=20230202T070000, start_date=20240108T203742, end_date=20240108T204428
+[2024-01-08T20:44:28.784+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-08T20:44:29.060+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

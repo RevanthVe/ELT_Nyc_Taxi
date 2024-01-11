@@ -1,0 +1,38 @@
+[2024-01-10T00:45:44.556+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [queued]>
+[2024-01-10T00:45:44.705+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [queued]>
+[2024-01-10T00:45:44.706+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-10T00:45:44.891+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-01-11 00:00:00+00:00
+[2024-01-10T00:45:44.949+0000] {standard_task_runner.py:60} INFO - Started process 411 to run task
+[2024-01-10T00:45:45.004+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'download_dataset_task', 'scheduled__2023-01-11T00:00:00+00:00', '--job-id', '179', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp.py', '--cfg-path', '/tmp/tmpd9lxnlu1']
+[2024-01-10T00:45:45.034+0000] {standard_task_runner.py:88} INFO - Job 179: Subtask download_dataset_task
+[2024-01-10T00:45:45.416+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [running]> on host 35cf15b90cf8
+[2024-01-10T00:45:45.744+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-10T00:45:45.928+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='download_dataset_task' AIRFLOW_CTX_EXECUTION_DATE='2023-01-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-11T00:00:00+00:00'
+[2024-01-10T00:45:45.931+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-10T00:45:45.932+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'curl -sSL https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet > /opt/***/input_2023-01.parquet']
+[2024-01-10T00:45:46.052+0000] {subprocess.py:86} INFO - Output:
+[2024-01-10T00:45:47.539+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-10T00:45:47.739+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=download_dataset_task, execution_date=20230111T000000, start_date=20240110T004544, end_date=20240110T004547
+[2024-01-10T00:45:47.855+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-10T00:45:48.015+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-01-10T00:59:12.923+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [queued]>
+[2024-01-10T00:59:12.958+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [queued]>
+[2024-01-10T00:59:12.959+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-10T00:59:12.978+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): download_dataset_task> on 2023-01-11 00:00:00+00:00
+[2024-01-10T00:59:12.987+0000] {standard_task_runner.py:60} INFO - Started process 2849 to run task
+[2024-01-10T00:59:12.993+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'download_dataset_task', 'scheduled__2023-01-11T00:00:00+00:00', '--job-id', '747', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp.py', '--cfg-path', '/tmp/tmp37ozvzpk']
+[2024-01-10T00:59:12.998+0000] {standard_task_runner.py:88} INFO - Job 747: Subtask download_dataset_task
+[2024-01-10T00:59:13.063+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ingestion_gcs_dag.download_dataset_task scheduled__2023-01-11T00:00:00+00:00 [running]> on host 35cf15b90cf8
+[2024-01-10T00:59:13.131+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-10T00:59:13.179+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='download_dataset_task' AIRFLOW_CTX_EXECUTION_DATE='2023-01-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-11T00:00:00+00:00'
+[2024-01-10T00:59:13.182+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-10T00:59:13.183+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'curl -sSL https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet > /opt/***/input_2023-01.parquet']
+[2024-01-10T00:59:13.201+0000] {subprocess.py:86} INFO - Output:
+[2024-01-10T00:59:13.615+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-10T00:59:13.794+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=download_dataset_task, execution_date=20230111T000000, start_date=20240110T005912, end_date=20240110T005913
+[2024-01-10T00:59:13.850+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-10T00:59:13.885+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

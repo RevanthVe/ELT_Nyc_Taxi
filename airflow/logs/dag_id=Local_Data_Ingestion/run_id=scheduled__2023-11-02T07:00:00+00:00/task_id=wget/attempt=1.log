@@ -1,0 +1,51 @@
+[2024-01-04T17:50:45.770+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T17:50:45.900+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T17:50:45.901+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-04T17:50:46.026+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): wget> on 2023-11-02 07:00:00+00:00
+[2024-01-04T17:50:46.043+0000] {standard_task_runner.py:60} INFO - Started process 5821 to run task
+[2024-01-04T17:50:46.101+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Local_Data_Ingestion', 'wget', 'scheduled__2023-11-02T07:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmp103m04j1']
+[2024-01-04T17:50:46.103+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask wget
+[2024-01-04T17:50:46.378+0000] {task_command.py:423} INFO - Running <TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [running]> on host 6672c9b206ef
+[2024-01-04T17:50:46.938+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Local_Data_Ingestion' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T07:00:00+00:00'
+[2024-01-04T17:50:46.941+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-04T17:50:46.942+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "hello world"']
+[2024-01-04T17:50:46.996+0000] {subprocess.py:86} INFO - Output:
+[2024-01-04T17:50:47.001+0000] {subprocess.py:93} INFO - hello world
+[2024-01-04T17:50:47.020+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-04T17:50:47.111+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Local_Data_Ingestion, task_id=wget, execution_date=20231102T070000, start_date=20240104T175045, end_date=20240104T175047
+[2024-01-04T17:50:47.215+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-04T17:50:47.326+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-01-04T17:54:43.425+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T17:54:43.559+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T17:54:43.560+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-04T17:54:43.704+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): wget> on 2023-11-02 07:00:00+00:00
+[2024-01-04T17:54:43.738+0000] {standard_task_runner.py:60} INFO - Started process 5977 to run task
+[2024-01-04T17:54:43.761+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Local_Data_Ingestion', 'wget', 'scheduled__2023-11-02T07:00:00+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmp_mu0czul']
+[2024-01-04T17:54:43.768+0000] {standard_task_runner.py:88} INFO - Job 50: Subtask wget
+[2024-01-04T17:54:44.074+0000] {task_command.py:423} INFO - Running <TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [running]> on host 6672c9b206ef
+[2024-01-04T17:54:44.575+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Local_Data_Ingestion' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T07:00:00+00:00'
+[2024-01-04T17:54:44.578+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-04T17:54:44.582+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "hello world"']
+[2024-01-04T17:54:44.638+0000] {subprocess.py:86} INFO - Output:
+[2024-01-04T17:54:44.643+0000] {subprocess.py:93} INFO - hello world
+[2024-01-04T17:54:44.645+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-04T17:54:44.704+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Local_Data_Ingestion, task_id=wget, execution_date=20231102T070000, start_date=20240104T175443, end_date=20240104T175444
+[2024-01-04T17:54:44.858+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-04T17:54:44.946+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-01-04T18:09:31.686+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T18:09:31.737+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [queued]>
+[2024-01-04T18:09:31.738+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-04T18:09:31.796+0000] {taskinstance.py:2192} INFO - Executing <Task(BashOperator): wget> on 2023-11-02 07:00:00+00:00
+[2024-01-04T18:09:31.821+0000] {standard_task_runner.py:60} INFO - Started process 6271 to run task
+[2024-01-04T18:09:31.851+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Local_Data_Ingestion', 'wget', 'scheduled__2023-11-02T07:00:00+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_local.py', '--cfg-path', '/tmp/tmparbhkgj8']
+[2024-01-04T18:09:31.858+0000] {standard_task_runner.py:88} INFO - Job 75: Subtask wget
+[2024-01-04T18:09:32.136+0000] {task_command.py:423} INFO - Running <TaskInstance: Local_Data_Ingestion.wget scheduled__2023-11-02T07:00:00+00:00 [running]> on host 6672c9b206ef
+[2024-01-04T18:09:32.520+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Local_Data_Ingestion' AIRFLOW_CTX_TASK_ID='wget' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T07:00:00+00:00'
+[2024-01-04T18:09:32.526+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-01-04T18:09:32.527+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "hello world"']
+[2024-01-04T18:09:32.561+0000] {subprocess.py:86} INFO - Output:
+[2024-01-04T18:09:32.566+0000] {subprocess.py:93} INFO - hello world
+[2024-01-04T18:09:32.568+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-04T18:09:32.659+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Local_Data_Ingestion, task_id=wget, execution_date=20231102T070000, start_date=20240104T180931, end_date=20240104T180932
+[2024-01-04T18:09:32.781+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-04T18:09:32.854+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

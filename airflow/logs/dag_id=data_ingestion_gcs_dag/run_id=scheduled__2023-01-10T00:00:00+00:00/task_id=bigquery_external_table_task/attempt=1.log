@@ -1,0 +1,36 @@
+[2024-01-10T00:46:13.565+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2024-01-10T00:46:13.611+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2024-01-10T00:46:13.615+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-10T00:46:13.759+0000] {taskinstance.py:2192} INFO - Executing <Task(BigQueryCreateExternalTableOperator): bigquery_external_table_task> on 2023-01-10 00:00:00+00:00
+[2024-01-10T00:46:13.804+0000] {standard_task_runner.py:60} INFO - Started process 518 to run task
+[2024-01-10T00:46:13.868+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'bigquery_external_table_task', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp.py', '--cfg-path', '/tmp/tmp20owiq8x']
+[2024-01-10T00:46:13.892+0000] {standard_task_runner.py:88} INFO - Job 205: Subtask bigquery_external_table_task
+[2024-01-10T00:46:14.207+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [running]> on host 35cf15b90cf8
+[2024-01-10T00:46:14.641+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-10T00:46:14.803+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='bigquery_external_table_task' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2024-01-10T00:46:14.812+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-01-10T00:46:14.815+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-01-10T00:46:14.817+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-01-10T00:46:15.960+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=bigquery_external_table_task, execution_date=20230110T000000, start_date=20240110T004613, end_date=20240110T004615
+[2024-01-10T00:46:16.021+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-10T00:46:16.047+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-01-10T00:59:08.866+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2024-01-10T00:59:08.904+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [queued]>
+[2024-01-10T00:59:08.904+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2024-01-10T00:59:08.921+0000] {taskinstance.py:2192} INFO - Executing <Task(BigQueryCreateExternalTableOperator): bigquery_external_table_task> on 2023-01-10 00:00:00+00:00
+[2024-01-10T00:59:08.931+0000] {standard_task_runner.py:60} INFO - Started process 2846 to run task
+[2024-01-10T00:59:08.937+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_dag', 'bigquery_external_table_task', 'scheduled__2023-01-10T00:00:00+00:00', '--job-id', '746', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp.py', '--cfg-path', '/tmp/tmp9gtdmddi']
+[2024-01-10T00:59:08.942+0000] {standard_task_runner.py:88} INFO - Job 746: Subtask bigquery_external_table_task
+[2024-01-10T00:59:09.006+0000] {task_command.py:423} INFO - Running <TaskInstance: data_ingestion_gcs_dag.bigquery_external_table_task scheduled__2023-01-10T00:00:00+00:00 [running]> on host 35cf15b90cf8
+[2024-01-10T00:59:09.073+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-10T00:59:09.117+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_ingestion_gcs_dag' AIRFLOW_CTX_TASK_ID='bigquery_external_table_task' AIRFLOW_CTX_EXECUTION_DATE='2023-01-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-10T00:00:00+00:00'
+[2024-01-10T00:59:09.121+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2024-01-10T00:59:09.121+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-01-10T00:59:09.123+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-01-10T00:59:09.603+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_dag, task_id=bigquery_external_table_task, execution_date=20230110T000000, start_date=20240110T005908, end_date=20240110T005909
+[2024-01-10T00:59:09.634+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-10T00:59:09.660+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

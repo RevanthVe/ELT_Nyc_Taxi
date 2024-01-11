@@ -10,25 +10,25 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - pg-network
+      - airflow
 
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-    ports:
-      - 8080:80
-    depends_on:
-      - pgdatabase
-    networks:
-      - pg-network
+    # pgadmin:
+    # image: dpage/pgadmin4
+    # environment:
+    #   - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+    #   - PGADMIN_DEFAULT_PASSWORD=root
+    # volumes:
+    #   - pgadmin-data:/var/lib/pgadmin
+    # ports:
+    #   - 8080:80
+    # depends_on:
+    #   - pgdatabase
+    # networks:
+    #   - pg-network
 
 networks:
-  pg-network:
-    name: pg-network
+  airflow:
+    name: airflow_default
     external: true
 volumes:
   pgadmin-data:

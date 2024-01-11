@@ -133,6 +133,11 @@ ssh-keygen -t rsa -f ~/.ssh/KEY_FILENAME -C USERNAME -b 2048
 Copy the public key (KEY_FILENAME.pub) and add the SSH key in gcp portal by going into compute engine/settings/metadata.
 
 Create a VM instance in gcp and copy the external IP into the local terminal in the command: ssh -i ~/.ssh/gcp revanthv@<insert external ip here>
+or
+Create a ~/.ssh/config file in local with details of Host, HostName, User, IdentityFile and save it.(Refer ~/.ssh/config file attached in repo)
+To connect to  vm server, run $ssh <Host> 
+
+To setup ssh vm on vscode, install Remote - SSH extension in your local vscode and toggle to "click on remote window" option on bottom left corner, select "connect to host" option and type in your host name.
 
 Install docker in the vm environment using: sudo apt install docker.io
 
@@ -146,6 +151,20 @@ after installing docker-compose, change the file to executable file using $ chmo
 To make docker-compose accessible from any directory,edit this to PATH variable:
 open bashrc file using $ nano .bashrc,in home folder and add the command: export PATH = "${HOME}/bin:${PATH}" ,at the end of the file and save it.
 Again in cli, enter $ source .bashrc , to logout and login again into bashrc. 
+
+Run $ docker-compose up -d in the project directory path 
+
+Later install pgcli to interact with postgres.
+
+To interact with postgres and pgadmin in local, forward the postgres port(5432) and pgadmin(8080) in vm to local by using "ports" section in vscode.
+
+Download Terraform into bin directory(executable) in vm by using terraform linux binary download package.
+
+Next to safely transer the gcp keys json file which was saved earlier while setting up gcp terraform environment on local, using sftp. (Open the directory where the keys json file is saved and run $ sftp <vm config file name> --> $put <keysfilename.json>)
+
+Now you can configure gcp cli in the vm using the same process we followed to setup in local.
+
+To stop the vm from terminal -> $sudo shutdown now
 
 
 

@@ -1,6 +1,7 @@
 terraform {
   required_providers {
     google = {
+        credentials = file(var.credentials)
       source  = "hashicorp/google"
       version = "5.9.0"
     }
@@ -8,13 +9,13 @@ terraform {
 }
 
 provider "google" {
-  project = "dtc-de-project1"
-  region  = "us-central1"
+  project = var.project
+  region  = var.region
 }
 
 resource "google_storage_bucket" "etl_project1_bucket1" {
-  name          = "dtc-de-project1-terra-bucket"
-  location      = "US"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -28,5 +29,5 @@ resource "google_storage_bucket" "etl_project1_bucket1" {
 }
 
 resource "google_bigquery_dataset" "etl_project1_bq_dataset" {
-  dataset_id = "project1_bq_dataset1"
+  dataset_id = var.bq_dataset_name
 }
