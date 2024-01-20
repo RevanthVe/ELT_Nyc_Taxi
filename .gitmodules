@@ -1,0 +1,3 @@
+[submodule "dbt/dbt/dbt_repo/DE_Project1_dbt"]
+	path = dbt/dbt/dbt_repo/DE_Project1_dbt
+	url = git@github.com:RevanthVe/DE_Project1_dbt.git
