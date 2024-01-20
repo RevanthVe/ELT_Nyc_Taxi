@@ -1,6 +1,6 @@
 ## ELT_Project
 
-#Workflow orchestration
+# Workflow orchestration
 
 <img width="677" alt="Screenshot 2024-01-19 at 7 24 21 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/182fc653-1577-488e-b0c9-fc0dd139c38b">
 
