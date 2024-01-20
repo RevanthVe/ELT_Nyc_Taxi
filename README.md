@@ -1,16 +1,16 @@
-## ELT_Project
+# ELT_Project
 
-# Workflow orchestration
+## Workflow orchestration
 
 <img width="677" alt="Screenshot 2024-01-19 at 7 24 21 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/182fc653-1577-488e-b0c9-fc0dd139c38b">
 
 Google Looker Report Link: https://lookerstudio.google.com/reporting/6d9accc7-efa1-4e7b-b16e-fd9db1e4d75e
 
 
-# Docker installation
+## Docker installation
 Install Docker from web and run docker init to intialize.
 
-# Python environment for postgres database 
+## Python environment for postgres database 
 libraries:
 Install pandas (for data manipulation), pyarrow, fastparquet (to read database file(parquet))
 
@@ -18,7 +18,7 @@ Install sqlalchemy, to deal with sql in python with pandas. (we use create_engin
 
 Install psycopy2 (to interact with PostgreSQL databases using Python)
 
-# Postgres Database connection and configuration:
+## Postgres Database connection and configuration:
 Setting up postgres image in Docker from command line:
 docker run -it \
 -e POSTGRES_USER="root" \
@@ -35,10 +35,10 @@ After successfully establishing postgres for docker, for postgres cli, run this 
 pip install pgcli //(postgres client for cl)
 pgcli -h localhost -p 5432 -u root -d ny_taxi //conecting to db from cli
 
-# Connecting pgadmin to Postgres DB
+## Connecting pgadmin to Postgres DB
 To interact with the database in a GUI, we can use pgadmin by creating a network with pgadmin container and Postgres container. Use the following cli docker commands:
 
-#Pgadmin-Postgres Docker Network:
+## Pgadmin-Postgres Docker Network:
 
 docker network create pg-network     // Creates a network named 'pg-network'
 
@@ -65,7 +65,7 @@ docker run -it \                   // To create pgadmin container within the net
 --name pgadmin-1 \
 dpage/pgadmin4
 
-# Ingestion script and Dockerizing ingestion script
+## Ingestion script and Dockerizing ingestion script
 Write python script for ingestion (here ingest_data.py)
 We need argparse library to read arguments passed in cli.
 Create a dockerfile in vs code and wirte the following for dockerizing the ingestion script:
@@ -92,7 +92,8 @@ docker run -it \
     --url="https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet"
 
 ENTRYPOINT ["python","ingest_data.py"]
-# Creating Docker-compose file (helps you to pack and share the container)
+
+## Creating Docker-compose file (helps you to pack and share the container)
 Instead of running seperate run statements for postgres and pgadmin, you can set up a docker-compose file which you can share across with other users.
 
 make sure you stop the docker images for postgres and pgadmin before running the docker-compose up
@@ -101,7 +102,7 @@ To ensure the data is persistent across all the container runs, you need to spec
 
 You need to create a volume mount for the pgadmin so it doesnt get erase everytime you close and open it.
 
-# Setting up GCP SDK
+## Setting up GCP SDK
 Install the SDK using: brew install --cask google-cloud-sdk
 
 Create a gcp account-> new project-> Generate keys and download the file using json.
@@ -119,7 +120,7 @@ Enable these APIs for the project:
 https://console.cloud.google.com/apis/library/iam.googleapis.com
 https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com
 
-# Setting up Terraform
+## Setting up Terraform
 Download terraform and intialize it using: terraform init
 
 other execution statements:
@@ -133,7 +134,7 @@ terraform destroy
 
 Create a "main.tf" where you manage all the resources and "variables.tf" file to create variables you use in setting up resources.
 
-# Set up GCP environment for Cloud VM and SSH access
+## Set up GCP environment for Cloud VM and SSH access
 Create a SSH key in ~/.ssh directory by using following command in cli:
 ssh-keygen -t rsa -f ~/.ssh/KEY_FILENAME -C USERNAME -b 2048
 
@@ -173,7 +174,7 @@ Now you can configure gcp cli in the vm using the same process we followed to se
 
 To stop the vm from terminal -> $sudo shutdown now
 
-# Setting up Airflow to schedule tasks
+## Setting up Airflow to schedule tasks
 Create a new sub-directory called airflow in the project directory.
 
 Inside airflow, create dags,logs and plugins folders using the following commands.
@@ -206,7 +207,7 @@ Once the python scripts are ready for scheduling dags, use $docker-compose build
 You can use airflow console by forwarding the port(8080) to local.
 In the airflow console, dags created using the python can be seen. Trigger them amanually or you can schedule the tasks which are run automatically.
 
-# Bigquery and DBT Analytics
+## Bigquery and DBT Analytics
 Create new tables in bq from the external tables created using airflow dags for anaytics in dbt.
 
 Open dbt cloud console in browser and launch a new project by selecting source as bigquery.
