@@ -1,4 +1,7 @@
-## ETL_Project1
+## ELT_Project
+
+<img width="677" alt="Screenshot 2024-01-19 at 7 24 21 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/182fc653-1577-488e-b0c9-fc0dd139c38b">
+
 
 # Docker installation
 Install Docker from web and run docker init to intialize.
@@ -166,14 +169,14 @@ Now you can configure gcp cli in the vm using the same process we followed to se
 
 To stop the vm from terminal -> $sudo shutdown now
 
-# Setting up Airflow to shcedule tasks
+# Setting up Airflow to schedule tasks
 Create a new sub-directory called airflow in the project directory.
 
 Inside airflow, create dags,logs and plugins folders using the following commands.
 $mkdir -p ./dags ./logs ./plugins
 $echo -e "AIRFLOW_UID=$(id -u)" > .env
 
-.env is created and used to store airflow user id, if it is not automatically create a .env file and enter AIRFLOW_UID=50000 in the file.
+.env is created and used to store airflow user id, if it is not automatically done,create a .env file and enter AIRFLOW_UID=50000 in the file.
 
 We are running the airflow service in docker setup, to create a docker setup for airflow latest version, use:
 $curl -LfO 'https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml'
@@ -190,9 +193,50 @@ Docker Build:
 Create a Dockerfile pointing to Airflow version you've just downloaded, such as apache/airflow:2.2.3, as the base image,
 
 And customize this Dockerfile by:
-
 Adding your custom packages to be installed. The one we'll need the most is gcloud to connect with the GCS bucket/Data Lake.
-Also, integrating requirements.txt to install libraries via pip install
+Also, integrating requirements.txt to install libraries via pip install.
+
+Once the setup is ready, create a python ingestion script for the functions used in the dags python file.
+write down the python script along with all the details of source(nyc tlc) and destination(bq tables). Refer the python scripts in ariflow folder.
+Once the python scripts are ready for scheduling dags, use $docker-compose build>> $docker-compose up to launch the airflow server.
+You can use airflow console by forwarding the port(8080) to local.
+In the airflow console, dags created using the python can be seen. Trigger them amanually or you can schedule the tasks which are run automatically.
+
+# Bigquery and DBT Analytics
+Create new tables in bq from the external tables created using airflow dags for anaytics in dbt.
+
+Open dbt cloud console in browser and launch a new project by selecting source as bigquery.
+
+Once you initiate the project using $dbt init, several files are created automatically, some of the key files are:
+dbt_project.yml: file used to configure the dbt project.
+csv files in the data folder: these will be our sources, files described above
+Files inside folder models: The sql files contain the scripts to run our models, this will cover staging, core and a datamarts models. At the end, these models will follow this structure:
+<img width="1354" alt="Screenshot 2024-01-19 at 2 10 27 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/96ff58e7-4b01-4b69-be1b-b74707f3b260">
+
+Clone the github repo, where you want to save the dbt progress,for deploying into production only files in main branch will be used.
+
+In the dbt_project.yml file edit the project name, you can also specify any defaults for the models,seeds, define variables used throughout the project environment.
+Create a schema.yml to define schema in each sections(models,seeds,macros.
+Macros can be created use them like UDF's, similar to how we define functions in python. Packages can be created in a similar way.
+Create models where you can do transformations like standardization, removing nulls, duplicates. Creating partitons.
+To use or define any custom short schemas, we can use seeds. Load the CSVs into seeds folder. This materializes the CSVs as tables in your target schema: $ dbt seed
+To run the models: $ dbt run
+To Test your data: $ dbt test
+To execute entire environment at once with one command,use $ dbt build 
+Generate documentation for the project: $ dbt docs generate
+
+Once the models are built, you can see the results in bq warehouse in the staging folder used for development(must be defined while setting up dbt project intially)
+
+To execute the models into production, commit the changes into git repo and once the files are in main branch, schedule the jobs.
+The end results are seen in the production database which is exposed to users like BI, ML.
+
+Connect any BI tool like google looker or Power BI to bq warehouse to create visualizaions.
+Graph showing the workflow of dbt models:
+<img width="1350" alt="Screenshot 2024-01-19 at 2 24 10 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/3b3199b8-23cd-4559-936f-9450966814fd">
+
+
+
+
 
 
 
