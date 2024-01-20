@@ -231,8 +231,6 @@ To execute the models into production, commit the changes into git repo and once
 The end results are seen in the production database which is exposed to users like BI, ML.
 
 Connect any BI tool like google looker or Power BI to bq warehouse to create visualizaions.
-Graph showing the workflow of dbt models:
-<img width="1350" alt="Screenshot 2024-01-19 at 2 24 10 PM" src="https://github.com/RevanthVe/DE_Project1/assets/115567423/3b3199b8-23cd-4559-936f-9450966814fd">
 
 
 
